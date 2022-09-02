@@ -21,6 +21,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>0x3 Academy</title>
+</svelte:head>
+
 <div class="flex flex-col justify-center items-center h-full px-20">
 	<h1
 		class="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tight leading-none mb-5 text-center"
