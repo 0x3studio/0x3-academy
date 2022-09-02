@@ -22,12 +22,16 @@
 </script>
 
 <div class="flex flex-col justify-center items-center h-full px-20">
-	<h1 class="text-9xl font-bold tracking-tight leading-none mb-5 text-center">0x3 Academy</h1>
+	<h1
+		class="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tight leading-none mb-5 text-center"
+	>
+		0x3 Academy
+	</h1>
 
-	<h2 class="text-2xl leading-tight mb-5  text-center">The best way to learn web3.</h2>
+	<h2 class="text-xl md:text-2xl leading-tight mb-5  text-center">The best way to learn web3.</h2>
 
 	{#if !serverError && !serverSuccess}
-		<p class="text-base mb-5  text-center">
+		<p class="text-sm md:text-base mb-5 text-center">
 			Leave your email address below so you can be alerted when we're ready.
 		</p>
 		<form use:form action="/api/save-email" method="post" class="flex mb-5 gap-x-2">
@@ -46,16 +50,16 @@
 	{/if}
 
 	{#if $errors.email}
-		<p class="text-center text-red-500">This is not a valid email address.</p>
+		<p class="text-sm md:text-base text-center text-red-500">This is not a valid email address.</p>
 	{:else}
 		{#if serverError}
-			<p class="text-center text-red-500">
+			<p class="text-sm md:text-base text-center text-red-500">
 				An error occurred while submitting your email address. Please refresh the page and try
 				again.
 			</p>
 		{/if}
 		{#if serverSuccess}
-			<p class="text-center text-green-500">
+			<p class="text-sm md:text-base text-center text-green-500">
 				Thank you! We&apos;ll be in touch as soon as we&apos;re ready.
 			</p>
 		{/if}
