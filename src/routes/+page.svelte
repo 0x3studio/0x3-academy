@@ -46,6 +46,7 @@
 				<input
 					type="text"
 					name="email"
+					placeholder="Enter your email"
 					class="appearance-none block w-full text-gray-100 border border-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 				/>
 				<button
@@ -114,6 +115,10 @@
 		background-color: #1a1a1a;
 		color: #fff;
 		border: 1px dotted #4399798b;
+	}
+
+	input::placeholder {
+		color: rgba(255, 255, 255, 0.5);
 	}
 
 	button {
