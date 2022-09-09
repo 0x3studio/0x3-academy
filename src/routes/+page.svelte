@@ -36,7 +36,7 @@
 	<h2>
 		The best way to learn web3. <br />From theory to pratical integration, for
 		<span class="gradient-text">beginners</span>
-		and <span class="gradient-text">experts</span>
+		and <span class="gradient-text">experts</span>.
 	</h2>
 
 	<div style="position:relative; height:10rem;">
