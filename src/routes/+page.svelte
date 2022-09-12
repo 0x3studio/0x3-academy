@@ -6,6 +6,7 @@
 
 	let serverSuccess = false;
 	let serverError = false;
+	let inputField;
 
 	const { form, errors, isValid, reset } = createForm({
 		onSuccess() {
@@ -40,25 +41,27 @@
 	</h2>
 
 	<div style="position:relative; height:10rem;">
-		{#if !serverError && !serverSuccess}
-			<p class="text-sm md:text-base mb-3">Get notified when available</p>
-			<form use:form action="/api/save-email" method="post" class="flex mb-5 gap-x-2">
-				<input
-					type="text"
-					name="email"
-					placeholder="Enter your email"
-					class="appearance-none block w-full text-gray-100 border border-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-				/>
-				<button
-					type="submit"
-					disabled={!$isValid}
-					class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:pointer-events-none disabled:opacity-50"
-					>Save</button
-				>
-			</form>
-		{/if}
+		<!-- {#if !serverError && !serverSuccess} -->
+		<p class="text-sm md:text-base mb-3">Get notified when available</p>
+		<form use:form action="/api/save-email" method="post" class="flex mb-5 gap-x-2">
+			<input
+				bind:this={inputField}
+				on:change={() => (serverSuccess = false)}
+				type="text"
+				name="email"
+				placeholder="Enter your email"
+				class="appearance-none block w-full text-gray-100 border border-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+			/>
+			<button
+				type="submit"
+				disabled={!$isValid}
+				class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:pointer-events-none disabled:opacity-50"
+				>Save</button
+			>
+		</form>
+		<!-- {/if} -->
 		<div>
-			{#if $errors.email}
+			{#if $errors.email && inputField?.value.length > 0}
 				<p class="text-sm md:text-base error">This is not a valid email address.</p>
 			{:else}
 				{#if serverError}
