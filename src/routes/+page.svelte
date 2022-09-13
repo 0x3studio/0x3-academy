@@ -30,6 +30,16 @@
 
 <svelte:head>
 	<title>0x3 Academy</title>
+	<meta property="og:title" content="0X3 Academy by 0X3 Studio" />
+	<meta
+		name="description"
+		content="The best way to learn web3. From theory to pratical integration, for beginners and experts."
+	/>
+	<meta
+		property="og:description"
+		content="The best way to learn web3. From theory to pratical integration, for beginners and experts."
+	/>
+	<meta property="og:image" content="https://academy.0x3.studio/intro.png" />
 </svelte:head>
 
 <div class="container">
